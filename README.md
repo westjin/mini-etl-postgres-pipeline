@@ -10,6 +10,8 @@ CSV 데이터를 읽어서 정제하고, PostgreSQL에 저장하는 전체 과�
 ## 📂 폴더 구조
 
 프로젝트는 아래와 같은 구조로 구성되어 있습니다:
+
+```
 mini-etl-postgres-pipeline/
 ├─ app/
 │   ├ db.py              # PostgreSQL 연결 코드
@@ -21,7 +23,8 @@ mini-etl-postgres-pipeline/
 │   └ schema.sql         # 테이블 정의 SQL
 ├─ docker-compose.yml    # Docker PostgreSQL 설정
 ├─ requirements.txt      # Python 라이브러리 목록
-└─ README.md             
+└─ README.md
+```
 
 ---
 
@@ -29,35 +32,48 @@ mini-etl-postgres-pipeline/
 
 ### 1) 저장소 클론
 
-```git clone https://github.com//mini-etl-postgres-pipeline.git
-cd mini-etl-postgres-pipeline```
+```bash
+git clone https://github.com/<your-id>/mini-etl-postgres-pipeline.git
+cd mini-etl-postgres-pipeline
+```
 
 ---
 
 ### 2) Docker PostgreSQL 실행
-'docker compose up -d'
+
+```bash
+docker compose up -d
+```
+
 ---
 
 ### 3) Python 가상환경 설정
 
-```python3 -m venv venv
+```bash
+python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt```
+pip install -r requirements.txt
+```
 
 ---
 
 ### 4) DB 테이블 생성
-```python app/init_db.py```
+
+```bash
+python app/init_db.py
+```
 
 ---
 
 ### 5) ETL 실행
 
-```python app/etl.py```
+```bash
+python app/etl.py
+```
 
 ---
 
-## 🧠 ETL 흐름
+## 🧠 ETL 흐름 설명
 
 ### 🔹 1. 추출(Extract)
 
@@ -83,7 +99,7 @@ CSV 파일에서 데이터를 한 줄씩 읽어 옵니다.
 
 ## 💻 코드 예시
 
-### ✅ Python DB 연결 테스트 코드
+### Python DB 연결 테스트
 
 ```python
 from db import get_connection
@@ -96,28 +112,39 @@ def test_connection():
     print("PostgreSQL version:")
     print(result)
     cur.close()
-    conn.close()```
+    conn.close()
+```
 
 ---
-✅ ETL 실행 예시
-``` python app/etl.py```
----
-📊 실행 결과 예시
 
-```[SKIP] Invalid email: bob_at_example.com
+## ⚡ ETL 실행 예시
+
+```bash
+python app/etl.py
+```
+
+---
+
+## 📊 실행 결과 예시
+
+```
+[SKIP] Invalid email: bob_at_example.com
 [SKIP] Invalid email: davidexample.com
 Inserted rows : 3
-Skipped rows : 2```
+Skipped rows : 2
+```
 
-📌 배운 점
-	•	ETL의 기본 구조(Extract → Transform → Load)를 직접 구현했습니다.
-	•	Docker 기반 PostgreSQL 환경 구성을 경험했습니다.
-	•	Python을 이용해 DB 연결 및 SQL 실행 자동화를 구현했습니다.
-	•	데이터 정제 및 예외 처리 로직을 적용했습니다.
+---
 
-⸻
+## 📌 배운 점
 
-🤝 참고
+- ETL의 기본 구조(Extract → Transform → Load)를 직접 구현했습니다.  
+- Docker 기반 PostgreSQL 환경 구성을 경험했습니다.  
+- Python을 이용해 DB 연결 및 SQL 실행 자동화를 구현했습니다.  
+- 데이터 정제 및 예외 처리 로직을 적용했습니다.
 
-이 프로젝트는 데이터 파이프라인의 기본 개념을 이해하기 위한 예제입니다.
+---
 
+## 🤝 참고
+
+이 프로젝트는 데이터 파이프라인의 기본 개념을 이해하기 위한 예제입니다.  

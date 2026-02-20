@@ -3,7 +3,7 @@
 ## 📖 프로젝트 소개
 
 이 프로젝트는 Python과 PostgreSQL을 이용해 **ETL(Extract → Transform → Load)**의 기본 흐름을 구현한 토이 프로젝트입니다.  
-CSV 데이터를 읽어서 정제하고, PostgreSQL에 저장하는 전체 과정을 경험할 수 있습니다.
+CSV 데이터를 읽어서 정제하고, PostgreSQL에 저장하는 전체 과정입니다.
 
 ---
 
@@ -148,3 +148,4 @@ Skipped rows : 2
 ## 🤝 참고
 
 이 프로젝트는 데이터 파이프라인의 기본 개념을 이해하기 위한 예제입니다.  
+
